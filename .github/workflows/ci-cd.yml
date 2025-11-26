@@ -98,7 +98,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{secrets.SERVER_USER}}@${{secrets.SERVER_HOST}} << 'EOF'
             cd /home/${{secrets.SERVER_USER}}/backend
-            sudo docker compose pull
-            sudo docker compose up -d
+            docker compose pull
+            docker compose up -d
           EOF
           
